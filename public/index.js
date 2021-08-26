@@ -3,8 +3,11 @@
 
 function showMarkerArea(target) {
   const markerArea = new markerjs2.MarkerArea(target);
-  markerArea.availableMarkerTypes = ["FrameMarker", markerjs2.ArrowMarker];
-  markerArea.addRenderEventListener((imgURL) => (target.src = imgURL));
+  markerArea.availableMarkerTypes = ["FrameMarker"];
+  markerArea.addRenderEventListener((imgURL) => {
+    target.src = imgURL;
+    console.log(markerArea.markers);
+  });
   markerArea.show();
 }
 
