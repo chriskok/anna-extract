@@ -31,33 +31,11 @@
                 <a href="#" class="nav-item nav-link disabled" tabindex="-1">Validation</a>
                 <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
             </div>
-            <!-- <div class="navbar-nav ml-auto">
-                <a href="#" class="nav-item nav-link">Login</a>
-            </div> -->
         </div>
     </nav>
 </div>
 
-<div id="app">
-    <img id="sampleImage" src="data/service_call.jpg" crossorigin="anonymous" />
-</div>
-<!-- <img id="sampleImage" src="data/service_call.jpg" style="max-width: 600px;" onclick="showMarkerArea(this);" /> -->
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm text-center"></div>
-        <div class="col-sm text-center">
-            <form action="/form" method="post" id="mainform" onsubmit="parseData()">
-                <input type="hidden" name="my_hidden_input" id="my_hidden_input">    
-                <input type="submit" class="btn btn-primary btn-lg" value="Submit" id="submit_button">
-            </form>   
-        </div>
-        <div class="col-sm text-center"></div>
-    </div>
-</div>
-
-<script src="index.js"></script>
+<p>Result: {{ result }}</p>
 
 </body>
 </html>
