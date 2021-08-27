@@ -12,6 +12,13 @@ function showMarkerArea(target) {
     markerArea.markers.forEach(element => {
       const current_coords = [element.width, element.height, element.centerX, element.centerY, element.top, element.left];
       coords.push(current_coords);
+
+      // create text input for user to label
+      var mainform = document.getElementById('mainform');
+      var input = document.createElement("input");
+      input.type = "text";
+      input.className = "form-control"; // set the CSS class
+      mainform.appendChild(input); // put it into the DOM
     });
     data = [
       {

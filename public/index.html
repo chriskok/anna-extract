@@ -46,12 +46,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="col text-center">
-            <form action="/form" method="post">
-                <input type="hidden" name="my_hidden_input" id="my_hidden_input">
+        <div class="col-sm text-center"></div>
+        <div class="col-sm text-center">
+            <form action="/form" method="post" id="mainform">
+                <input type="hidden" name="my_hidden_input" id="my_hidden_input">    
+                <input type="text" class="form-control" name='input1'>
                 <input type="submit" class="btn btn-primary btn-lg" value="Submit">
             </form>   
         </div>
+        <div class="col-sm text-center"></div>
     </div>
 </div>
 
