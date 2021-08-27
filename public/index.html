@@ -38,11 +38,37 @@
     </nav>
 </div>
 
+<!-- <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+  </div> -->
 
 <div id="app">
     <!-- <iframe src="service_call.pdf" id="sampleImage" crossorigin="anonymous"></iframe> -->
     <!-- <embed src="data/service_call.jpg" width="800px" height="2100px" id="sampleImage" crossorigin="anonymous"/> -->
     <img id="sampleImage" src="data/service_call.jpg" crossorigin="anonymous" />
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <form action="/form" method="post">
+                <input type="hidden" name="my_hidden_input" id="my_hidden_input">
+                <input type="submit" class="btn btn-primary btn-lg" value="Submit">
+            </form>   
+        </div>
+    </div>
 </div>
 
 <script src="index.js"></script>
