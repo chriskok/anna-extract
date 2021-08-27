@@ -1,6 +1,7 @@
 var submit_button = document.getElementById('submit_button');
 const coords = [];
 const label_inputs = [];
+const sampleImage = document.getElementById("sampleImage");
 
 function showMarkerArea(target) {
   const markerArea = new markerjs2.MarkerArea(target);
@@ -17,15 +18,17 @@ function showMarkerArea(target) {
       input.className = "form-control"; 
       submit_button.before(input)
 
-      const current_coords = [element.width, element.height, element.centerX, element.centerY, element.top, element.left];
+      // const current_coords = [element.width, element.height, element.centerX, element.centerY, element.top, element.left];
+      const current_coords = [element.width, element.height, element.top, element.left, sampleImage.width, sampleImage.height];
       coords.push(current_coords);
       label_inputs.push(input);
+      // console.log(current_coords);
+      // console.log(sampleImage.width, sampleImage.height);
     });
   });
   markerArea.show();
 }
 
-const sampleImage = document.getElementById("sampleImage");
 sampleImage.addEventListener("click", () => {
   showMarkerArea(sampleImage);
 });
