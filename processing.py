@@ -7,22 +7,17 @@ import cv2
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
 
-curr_image_path = "public/data/service_call.jpg"
-
-# what each item means: [element.width, element.height, element.top, element.left, sampleImage.width, sampleImage.height];
-example_data = {"Date":[159,30,73,231,407,634],"Name":[316,77,96,54,407,634]}
-curr_coord_data = example_data['Name']
-
 # int_val/int_total = x/curr_total
 # x = curr_total * (int_val/int_total)
 def get_proportional(int_val, int_total, curr_total):
     return curr_total * (int_val/int_total)
 
 def crop_image(coord_data, image_path):
-    img = cv2.imread(image_path)
+    # what each item means: [element.width, element.height, element.top, element.left, sampleImage.width, sampleImage.height];
     interface_w = coord_data[4] 
     interface_h = coord_data[5] 
 
+    img = cv2.imread(image_path)
     height, width, _ = img.shape
 
     coord_w = int(get_proportional(coord_data[0], interface_w, width))
@@ -47,6 +42,10 @@ def ocr_on_image(current_image):
     return data
 
 def main():
+    curr_image_path = "public/data/service_call.jpg"
+    example_data = {"Date":[159,30,73,231,407,634],"Name":[316,77,96,54,407,634]}
+    curr_coord_data = example_data['Name']
+
     cropped_image = crop_image(curr_coord_data, curr_image_path)
     print(ocr_on_image(cropped_image))
     
