@@ -1,6 +1,8 @@
 // import "./styles.css";
 // import * as markerjs2 from "markerjs2";
 
+var submit_button = document.getElementById('submit_button');
+
 function showMarkerArea(target) {
   const markerArea = new markerjs2.MarkerArea(target);
   markerArea.availableMarkerTypes = ["FrameMarker"];
@@ -17,8 +19,11 @@ function showMarkerArea(target) {
       var mainform = document.getElementById('mainform');
       var input = document.createElement("input");
       input.type = "text";
-      input.className = "form-control"; // set the CSS class
-      mainform.appendChild(input); // put it into the DOM
+      input.name = "label" + coords.length;
+      input.className = "form-control"; 
+      // mainform.appendChild(input); // put it into the DOM
+      submit_button.before(input)
+      
     });
     data = [
       {
