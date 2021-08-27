@@ -1,5 +1,6 @@
 from fastapi import  FastAPI, Form, Request
 from fastapi.staticfiles import StaticFiles
+import json
 
 # Use this to serve a public/index.html
 from starlette.responses import FileResponse 
@@ -13,6 +14,7 @@ async def read_index():
     return RedirectResponse(url="/public/index.html")  
 
 @app.post("/form")
-def form_post(request: Request, my_hidden_input: list = Form(...)):
-    print(my_hidden_input)
-    return my_hidden_input
+def form_post(request: Request, my_hidden_input: str = Form(...)):
+    parsed_data = json.loads(my_hidden_input)
+    print(parsed_data)
+    return parsed_data
