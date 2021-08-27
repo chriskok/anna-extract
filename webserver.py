@@ -6,6 +6,8 @@ import json
 from starlette.responses import FileResponse 
 from starlette.responses import RedirectResponse
 
+from processing import *
+
 app = FastAPI()
 app.mount("/public", StaticFiles(directory="public"), name="public")
 
@@ -16,5 +18,12 @@ async def read_index():
 @app.post("/form")
 def form_post(request: Request, my_hidden_input: str = Form(...)):
     parsed_data = json.loads(my_hidden_input)
+    curr_image_path = "public/data/service_call.jpg"
     print(parsed_data)
-    return parsed_data
+
+    return_dict = {}
+    for label in parsed_data:
+        cropped_image = crop_image(parsed_data[label], curr_image_path)
+        return_dict[label] = ocr_on_image(cropped_image)
+
+    return return_dict
