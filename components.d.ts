@@ -16,15 +16,18 @@ declare module 'vue' {
     HelloWorld: typeof import('C:/Users/Administrator/Documents/Projects/Personal/anna-extract/src/components/HelloWorld.vue')['default']
     ICarbonCaretLeft: typeof import('~icons/carbon/caret-left')['default']
     ICarbonCaretRight: typeof import('~icons/carbon/caret-right')['default']
+    IMdiCheck: typeof import('~icons/mdi/check')['default']
     IMdiChevronLeft: typeof import('~icons/mdi/chevron-left')['default']
     IMdiEdit: typeof import('~icons/mdi/edit')['default']
     IMdiPlus: typeof import('~icons/mdi/plus')['default']
     Index: typeof import('C:/Users/Administrator/Documents/Projects/Personal/anna-extract/src/components/Sidebar/Index.vue')['default']
     Item: typeof import('C:/Users/Administrator/Documents/Projects/Personal/anna-extract/src/components/Sidebar/Item.vue')['default']
+    LabelList: typeof import('C:/Users/Administrator/Documents/Projects/Personal/anna-extract/src/components/LabelList.vue')['default']
     MyButton: typeof import('C:/Users/Administrator/Documents/Projects/Personal/anna-extract/src/components/MyButton.vue')['default']
     MyStepper: typeof import('C:/Users/Administrator/Documents/Projects/Personal/anna-extract/src/components/MyStepper.vue')['default']
     Sidebar: typeof import('C:/Users/Administrator/Documents/Projects/Personal/anna-extract/src/components/Sidebar/Index.vue')['default']
     SidebarItem: typeof import('C:/Users/Administrator/Documents/Projects/Personal/anna-extract/src/components/Sidebar/Item.vue')['default']
+    TemplateMarkers: typeof import('C:/Users/Administrator/Documents/Projects/Personal/anna-extract/src/components/TemplateMarkers.vue')['default']
   }
 }
 
